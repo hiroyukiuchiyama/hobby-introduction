@@ -19,8 +19,8 @@
           <td><%= @hobby.body %></td>
 
           <% if @user.id == current_user.id%>
-            <td><%= link_to 'Edit', edit_book_path(@hobby), class: "btn btn-sm btn-success edit_hobby_#{@hobby.id}" %></td>
-            <td><%= link_to 'Destroy', hobby_path(@hobby), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@hobby.id}"%></td>
+            <td><%= link_to 'Edit', edit_hobby_path(@hobby), class: "btn btn-sm btn-success edit_hobby_#{@hobby.id}" %></td>
+            <td><%= link_to 'Destroy', hobby_path(@hobby), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_hobby_#{@hobby.id}"%></td>
           <% end %>
         </tr>
       </table>

@@ -2,7 +2,7 @@ class HobbyController < ApplicationController
     before_action :ensure_correct_user, only:[:edit, :update,:destroy]
     
      def show
-         @hobby = Hobbby.find(params[:id])
+         @hobby = Hobby.find(params[:id])
          @user = @hobby.user
          @hobbys = Hobby.new
      end
