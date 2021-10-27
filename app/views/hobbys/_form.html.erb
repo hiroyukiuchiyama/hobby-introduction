@@ -1,4 +1,4 @@
-<%= form_with model:hobby,local:true do |f| %>
+<%= form_with model:hobby,url: hobbys_path,method: :post,local:true do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control hobby_title' %>
@@ -6,6 +6,7 @@
   <div class="form-group">
     <%= f.label :opinion %>
     <%= f.text_area :body, class: 'form-control hobby_body' %>
+    <%= f.select :rate, Hobby.rates.keys.to_a, {} %>
   </div>
   <div class="form-group">
     <%= f.submit class: 'btn btn-success' %>

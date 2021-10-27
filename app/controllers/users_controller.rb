@@ -3,12 +3,12 @@ class UsersController < ApplicationController
     
     def show
         @user = User.find(params[:id])
-        @hobbys = @user.hobbys
+        @hobbys = @user.hobbies
         @hobby = Hobby.new
     end
     
     def index
-        @user = User.all
+        @users = User.all
         @hobby = Hobby.new
     end
     

@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% hobbys.each do |book| %>
+    <% hobbys.each do |hobby| %>
       <tr>
         <td><%= link_to user_path(hobby.user) do %>
           <%= attachment_image_tag(hobby.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %>

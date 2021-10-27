@@ -1,4 +1,4 @@
-class HobbyController < ApplicationController
+class HobbysController < ApplicationController
     before_action :ensure_correct_user, only:[:edit, :update,:destroy]
     
      def show
@@ -9,16 +9,16 @@ class HobbyController < ApplicationController
      
      def index 
          @hobby = Hobby.new
-         @hobbys = hobby.all
+         @hobbys = Hobby.all
      end
      
      def create
-        @hobby = hobby.new(book_params)
+        @hobby = Hobby.new(hobby_params)
         @hobby.user_id = current_user.id
       if @hobby.save
-        redirect_to book_path(@hobby), notice: "You have created hobby successfully."
+        redirect_to hobby_path(@hobby), notice: "You have created hobby successfully."
       else
-        @hobbys = hobby.all
+        @hobbys = Hobby.all
         render 'index'
       end
      end
@@ -30,7 +30,7 @@ class HobbyController < ApplicationController
      def update
       @hobby = hobby.find(params[:id])
       if @hobby.update(hobby_params)
-          redirect_to hobby_path(@book), notice: "You have updated hobby successfully."
+          redirect_to hobby_path(@hobby), notice: "You have updated hobby successfully."
       else
           render 'edit'
       end
@@ -46,11 +46,11 @@ class HobbyController < ApplicationController
     private
     
     def hobby_params
-        params.require(:hobby).permit(:title, :body)
+        params.require(:hobby).permit(:title, :body,:rate)
     end
 
   def ensure_correct_user
-    @hobby = hobby.find(params[:id])
+    @hobby = Hobby.find(params[:id])
     @user = @hobby.user
     unless @user == current_user
       redirect_to hobby_path
@@ -61,5 +61,3 @@ end
     
     
     
-
-end
