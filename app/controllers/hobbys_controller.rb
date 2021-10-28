@@ -24,7 +24,7 @@ class HobbysController < ApplicationController
      end
      
      def edit
-        @hobby = hobby.find(params[:id])
+        @hobby = Hobby.find(params[:id])
      end
      
      def update
