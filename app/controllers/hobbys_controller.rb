@@ -14,6 +14,7 @@ class HobbysController < ApplicationController
      
      def create
         @hobby = Hobby.new(hobby_params)
+        @hobby.score = Language.get_data(hobby_params[:body])  #この行を追加
         @hobby.user_id = current_user.id
       if @hobby.save
         redirect_to hobby_path(@hobby), notice: "You have created hobby successfully."
@@ -28,7 +29,7 @@ class HobbysController < ApplicationController
      end
      
      def update
-      @hobby = hobby.find(params[:id])
+      @hobby = Hobby.find(params[:id])
       if @hobby.update(hobby_params)
           redirect_to hobby_path(@hobby), notice: "You have updated hobby successfully."
       else
