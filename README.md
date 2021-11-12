@@ -19,7 +19,6 @@
 ### 主な利用シーン
 休日に何かしたいとき、休日に自己啓発に自分の興味ある本を探したり、簡単な料理を作ったりするとき...
 
-## 設計書
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1UcBL5Nf_H44UphfgEdhqIOjMAFihyMKK61vk2wRwCCA/edit#gid=0>
