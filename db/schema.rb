@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_08_105600) do
+ActiveRecord::Schema.define(version: 2021_11_14_114947) do
 
   create_table "hobbies", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2021_11_08_105600) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "score"
+  end
+
+  create_table "hobby_images", force: :cascade do |t|
+    t.string "image_id"
+    t.text "caption"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
