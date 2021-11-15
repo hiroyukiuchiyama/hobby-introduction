@@ -1,7 +1,11 @@
 <% @hobby_image.each do |hobby_image| %>
 <div>
   <%= attachment_image_tag hobby_image, :image %>
+  <%= link_to hobby_image_path(post_image.id) do %>
+  <%= attachment_image_tag hobby_image, :image %>
+  <% end %>
   <p>投稿ユーザー画像：<%= image_tag('sample-author1.jpg') %></p>
   <p>説明：<%= hobby_image.caption %></p>
 </div>
 <% end %>
+ 
