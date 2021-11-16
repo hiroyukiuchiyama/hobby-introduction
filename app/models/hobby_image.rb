@@ -1,4 +1,5 @@
 class HobbyImage < ApplicationRecord
-     belongs_to :user
      attachment :image
+     belongs_to :hobby
+     
 end

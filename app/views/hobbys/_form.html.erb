@@ -8,6 +8,13 @@
     <%= f.text_area :body, class: 'form-control hobby_body' %>
     <%= f.select :rate, Hobby.rates.keys.to_a, {} %>
   </div>
+    
+  <div class="form-group">
+    <%= f.fields_for :hobby_image do |i| %>
+        <%= i.label :image %>
+        <%= i.attachment_field :image, class: "form-control-file user_image" %>
+  <% end %>
+  </div>
   <div class="form-group">
     <%= f.submit class: 'btn btn-success' %>
   </div>

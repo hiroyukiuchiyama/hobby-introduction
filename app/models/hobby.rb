@@ -6,4 +6,6 @@ class Hobby < ApplicationRecord
   validates :body, {length: {maximum: 700}}
 
   belongs_to :user
+  has_one :hobby_image,dependent: :destroy
+  accepts_nested_attributes_for :hobby_image
 end

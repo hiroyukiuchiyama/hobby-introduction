@@ -5,6 +5,7 @@ class HobbysController < ApplicationController
          @hobby = Hobby.find(params[:id])
          @user = @hobby.user
          @hobbys = Hobby.new
+         @hobbys.build_hobby_image
      end
      
      def index 
@@ -47,7 +48,8 @@ class HobbysController < ApplicationController
     private
     
     def hobby_params
-        params.require(:hobby).permit(:title, :body,:rate)
+        params.require(:hobby).permit(:title, :body,:rate, hobby_image_attributes: [:image])
+        
     end
 
   def ensure_correct_user

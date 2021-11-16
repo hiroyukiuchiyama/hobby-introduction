@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_11_14_114947) do
   create_table "hobby_images", force: :cascade do |t|
     t.string "image_id"
     t.text "caption"
-    t.integer "user_id"
+    t.integer "hobby_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -3,7 +3,7 @@ class CreateHobbyImages < ActiveRecord::Migration[5.2]
     create_table :hobby_images do |t|
       t.string :image_id
       t.text :caption
-      t.integer :user_id
+      t.integer :hobby_id
 
       t.timestamps
     end

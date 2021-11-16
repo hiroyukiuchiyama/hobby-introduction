@@ -10,6 +10,5 @@ class User < ApplicationRecord
   attachment :profile_image
 
   has_many :hobbies
-  has_many :hobby_images, dependent: :destroy
 
 end

@@ -13,7 +13,7 @@
     <% hobbys.each do |hobby| %>
       <tr>
         <td><%= link_to user_path(hobby.user) do %>
-          <%= attachment_image_tag(hobby.user, :profile_image, :fill, 50, 50, fallback: "no_image2.png") %>
+          <%= attachment_image_tag(hobby.hobby_image, :image, :fill, 50, 50, fallback: "no_image2.png") %>
           <% end %>
         </td>
         <td><%= link_to hobby.title, hobby_path(hobby), class: "hobby_#{hobby.id}" %></td>
