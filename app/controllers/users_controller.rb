@@ -5,6 +5,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @hobbys = @user.hobbies
         @hobby = Hobby.new
+        @hobby.build_hobby_image
     end
     
     def index

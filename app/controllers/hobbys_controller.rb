@@ -11,6 +11,8 @@ class HobbysController < ApplicationController
      def index 
          @hobby = Hobby.new
          @hobbys = Hobby.all
+        
+         
      end
      
      def create
