@@ -11,7 +11,7 @@ class HobbysController < ApplicationController
      def index 
          @hobby = Hobby.new
          @hobbys = Hobby.all
-        
+         @hobby.build_hobby_image
          
      end
      
