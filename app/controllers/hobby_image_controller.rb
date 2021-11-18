@@ -18,12 +18,12 @@ class HobbyImageController < ApplicationController
     @hobby_image = HobbyImage.find(params[:id])
   end
 
-  def destroy
+  def
+   destroy
     @hobby_image = HobbyImage.find(params[:id])
     @hobby_image.destroy
     redirect_to hobby_image_path
   end
-  
   private
 
   def hooby_image_params
